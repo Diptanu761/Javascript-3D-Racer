@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>Javascript 3D Racer</title>
+  <link rel="icon" href="icon.png" >
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+        body {
+            background-color: #222;
+            font-family: "Press Start 2P", monospace;
+            color: #f57214;
+            text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+            text-align: center;
+            padding-top: 216px;
+            letter-spacing: 2px;
+        }
+        .container {
+            margin: 0 auto;
+        }
+        input {
+            font-family: "Press Start 2P", monospace;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            border: 2px solid #f5b506;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+        .container::after {
+            background: #555;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-family: "Press Start 2P", monospace;
+            background-color: #333;
+            color: #f5b506;
+            border: 2px solid #f5b506;
+            text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Javascript 3D Racer</h1>
+        <label for="playerName">Enter Your Name:</label>
+        <br>
+        <input type="text" id="playerName" placeholder="Type Here...">
+        <br>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <script>
+        function startGame() {
+            const playerName = document.getElementById("playerName").value;
+            if (playerName) {
+                // Save player name in sessionStorage or pass it to the game page
+                sessionStorage.setItem("playerName", playerName);
+                window.location.href = "v4.final.html"; // Redirect to the game page
+            } else {
+                alert("Please enter your name!");
+            }
+        }
+    </script>
+</body>
+</html> 
